@@ -6,31 +6,26 @@
 # Breakout: 3
 
 def sum_n(n):
-  if n==0:
-    return 1
-  else:
-    return n + sum_n(n-1)
-
-def print_n(s, n):
-  if n<= 0 :
-    return
+  if n == 0:
+    return n
   else: 
-   print_n(s)
-   print_n(s,n-1)
+    return n + sum_n(n-1)
+    
 
+def print_n (s, n):
+  if n <= 0: 
+    return
+  else:
+    print (s)
+    print_n(s, n-1)
 
 def run():
-  num = int(input("Enter at int: "))
-  print(f"sum is {sum_n(num)}.")
-  string = str(input("Enter a string: "))
-  print_n(string,num)
+  num = input("Enter an int: ")
+  num_int = int(num)
+  print(f"sum is {sum_n(num_int)}.")
+  string = input("Enter a string: ")
 
-  
+  print_n(string, num_int)
+
 if __name__ == "__main__":
   run()
-
-
-
-
-
-
